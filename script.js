@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     '1988': L.tileLayer.wms(wmsUrl, { layers: '3', format: 'image/png', transparent: true, version: '1.1.1' }),
     '1995': L.tileLayer.wms(wmsUrl, { layers: '4', format: 'image/png', transparent: true, version: '1.1.1' }),
     '1999': L.tileLayer.wms(wmsUrl, { layers: '5', format: 'image/png', transparent: true, version: '1.1.1' }),
-    '2024': L.tileLayer.wms(wmsModern, { layers: '0', format: 'image/png' transparent: true, version: '1.1.1' }),
+    '2024': L.tileLayer.wms(wmsModern, { layers: '0', format: 'image/png' transparent: true, version: '1.1.1' })
   };
 
   // 5. Display 1954 by default on load
