@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // 5. Display 1954 by default on load
-  let activeLayer = yearLayers['1954'].addTo(map);
+  let activeLayer = yearLayers['2024'].addTo(map);
 
   // 6. Connect to dropdown element: <select id="year-select">
   const dropdown = document.getElementById('year-select');
