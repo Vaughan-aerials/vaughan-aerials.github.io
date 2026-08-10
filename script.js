@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 3. York Region WMS base URL
   const wmsUrl = 'https://ww3.yorkmaps.ca/arcgis/services/WMS/YorkRegion_OrthoImages_WMS/mapserver/wmsserver';
-
+  const wmsModern = 'https://ww3.yorkmaps.ca/arcgis/services/WMS/YorkRegion_OrthosImages_2024_WMS/mapserver/wmsserver';
   // 4. Map each dropdown option to its WMS sub-layer index
   const yearLayers = {
     '1954': L.tileLayer.wms(wmsUrl, { layers: '0', format: 'image/png', transparent: true, version: '1.1.1' }),
@@ -18,7 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
     '1978': L.tileLayer.wms(wmsUrl, { layers: '2', format: 'image/png', transparent: true, version: '1.1.1' }),
     '1988': L.tileLayer.wms(wmsUrl, { layers: '3', format: 'image/png', transparent: true, version: '1.1.1' }),
     '1995': L.tileLayer.wms(wmsUrl, { layers: '4', format: 'image/png', transparent: true, version: '1.1.1' }),
-    '1999': L.tileLayer.wms(wmsUrl, { layers: '5', format: 'image/png', transparent: true, version: '1.1.1' })
+    '1999': L.tileLayer.wms(wmsUrl, { layers: '5', format: 'image/png', transparent: true, version: '1.1.1' }),
+    '2024': L.tileLayer.wms(wmsModern, { layers: '0', format: 'image/png' transparent: true, version: '1.1.1' }),
   };
 
   // 5. Display 1954 by default on load
