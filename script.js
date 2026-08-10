@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Initialize map on Vaughan
-  const map = L.map('map',{setZoom:19}).setView([43.8372, -79.5083], 13);
+  const map = L.map('map', { maxZoom: 19 }).setView([43.8372, -79.5083], 13);
 
   // 2. OpenStreetMap backup basemap
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
