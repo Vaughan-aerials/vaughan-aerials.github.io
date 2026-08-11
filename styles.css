@@ -18,6 +18,10 @@ footer{
   width: 100%;
   height: 100vh;
 }
+.left-year-select {
+    top: 20px;
+  right: 20px;
+}
 .yearselect {
 	-webkit-appearance: none;
     -moz-appearance: none;
