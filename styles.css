@@ -19,6 +19,8 @@ footer{
   height: 100vh;
 }
 .yearselect {
+	-webkit-appearance: none;
+    -moz-appearance: none;
   position: absolute;
   z-index:1000;
   top: 20px;
@@ -29,6 +31,8 @@ footer{
   padding: 12px 20px !important;
 }
 .yearselect select {
+	-webkit-appearance: none;
+    -moz-appearance: none;
 	position: absolute;
   z-index:1000;
   top: 20px;
