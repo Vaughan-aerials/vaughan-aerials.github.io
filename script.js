@@ -11,23 +11,25 @@ document.addEventListener('DOMContentLoaded', () => {
   // 3. York Region WMS base URL
 
   const wmsUrl = 'https://ww3.yorkmaps.ca/arcgis/services/WMS/YorkRegion_OrthoImages_WMS/mapserver/wmsserver';
-  const wmsModern = 'https://ww3.yorkmaps.ca/arcgis/services/WMS/YorkRegion_OrthoImages_2024_WMS/mapserver/wmsserver';
   // 4. Map each dropdown option to its WMS sub-layer index
   const yearLayers = {
-    '1954': L.tileLayer.wms(wmsUrl, { layers: '0', format: 'image/png', transparent: true, version: '1.1.1' }),
-    '1970': L.tileLayer.wms(wmsUrl, { layers: '1', format: 'image/png', transparent: true, version: '1.1.1' }),
-    '1978': L.tileLayer.wms(wmsUrl, { layers: '2', format: 'image/png', transparent: true, version: '1.1.1' }),
-    '1988': L.tileLayer.wms(wmsUrl, { layers: '3', format: 'image/png', transparent: true, version: '1.1.1' }),
-    '1995': L.tileLayer.wms(wmsUrl, { layers: '4', format: 'image/png', transparent: true, version: '1.1.1' }),
-    '1999': L.tileLayer.wms(wmsUrl, { layers: '5', format: 'image/png', transparent: true, version: '1.1.1' }),
-    '2024': L.tileLayer.wms(wmsModern, { layers: '0', format: 'image/png', transparent: true, version: '1.1.1' })
+    //'1954': L.tileLayer.wms(wmsUrl, { layers: '0', format: 'image/png', transparent: true, version: '1.1.1' }),
+    '1970': L.tileLayer.wms(wmsUrl, { layers: '1', format: 'image/png', transparent: true, version: '1.1.1', }),
+    '1978': L.tileLayer.wms(wmsUrl, { layers: '5', format: 'image/png', transparent: true, version: '1.1.1' }),
+    '1988': L.tileLayer.wms(wmsUrl, { layers: '9', format: 'image/png', transparent: true, version: '1.1.1' }),
+    '1995': L.tileLayer.wms(wmsUrl, { layers: '13', format: 'image/png', transparent: true, version: '1.1.1' }),
+    '1999': L.tileLayer.wms(wmsUrl, { layers: '17', format: 'image/png', transparent: true, version: '1.1.1' }),
+    // '2002': L.tileLayer.wms(wmsUrl, { layers: '21', format: 'image/png', transparent: true, version: '1.1.1' }),
+    '2005': L.tileLayer.wms(wmsUrl, { layers: '25', format: 'image/png', transparent: true, version: '1.1.1' }),
+    '2012': L.tileLayer.wms(wmsUrl, { layers: '37', format: 'image/png', transparent: true, version: '1.1.1' }),
+    '2025': L.tileLayer.wms(wmsUrl, { layers: '89', format: 'image/png', transparent: true, version: '1.1.1' })
   };
 
-  // 5. Display 1954 by default on load
-  let activeLayer = yearLayers['2024'].addTo(map);
+  // 5. Display 2025 by default on load
+  let activeLayer = yearLayers['1970'].addTo(map);
 
   // 6. Connect to dropdown element: <select id="year-select">
-  const dropdown = document.getElementById('year-select');
+  const dropdown = document.getElementById('left-year-select');
 
   dropdown.addEventListener('change', (e) => {
     const selectedYear = e.target.value;
