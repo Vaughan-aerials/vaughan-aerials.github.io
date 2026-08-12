@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     '1988': L.tileLayer.wms(wmsUrl, { ...wmsoptions, layers: '9' }),
     '1995': L.tileLayer.wms(wmsUrl, { ...wmsoptions, layers: '13' }),
     '1999': L.tileLayer.wms(wmsUrl, { ...wmsoptions, layers: '17' }),
-    '2005': L.tileLayer.wms(wmsoptions, { ...wmsoptions, layers: '25' }),
+    '2005': L.tileLayer.wms(wmsURL, { ...wmsoptions, layers: '25' }),
     '2012': L.tileLayer.wms(wmsUrl, { ...wmsoptions, layers: '37' }),
     '2025': L.tileLayer.wms(wmsUrl, { ...wmsoptions, layers: '89' })
   };
