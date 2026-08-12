@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Initialize map on Vaughan
-  const map = L.map('map').setView([43.8372, -79.5083], 13);
+  // 1. Initialize map on Vaughan with maxZoom allowed on the map instance
+  const map = L.map('map', { maxZoom: 22 }).setView([43.8372, -79.5083], 13);
 
   // 2. OpenStreetMap backup basemap
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -8,44 +8,46 @@ document.addEventListener('DOMContentLoaded', () => {
     attribution: '© OpenStreetMap'
   }).addTo(map);
 
-  // 3. York Region WMS base URL
-const wmsoptions = {
-  format: 'image/png',
-  transparent: true,
-  version: '1.1.1',
-  maxNativeZoom: 18,
-  maxZoom: 22
-}
-  const wmsUrl = 'https://ww3.yorkmaps.ca/arcgis/services/WMS/YorkRegion_OrthoImages_WMS/mapserver/wmsserver';
-  // 4. Map each dropdown option to its WMS sub-layer index
-  const yearLayers = {
-    //'1954': L.tileLayer.wms(wmsUrl, { layers: '0', wmsoptions }),
-    '1970': L.tileLayer.wms(wmsUrl, { layers: '1', wmsoptions }),
-    '1978': L.tileLayer.wms(wmsUrl, { layers: '5', wmsoptions }),
-    '1988': L.tileLayer.wms(wmsUrl, { layers: '9', wmsoptions }),
-    '1995': L.tileLayer.wms(wmsUrl, { layers: '13', wmsoptions }),
-    '1999': L.tileLayer.wms(wmsUrl, { layers: '17', wmsoptions }),
-    // '2002': L.tileLayer.wms(wmsUrl, { layers: '21', wmsoptions }),
-    '2005': L.tileLayer.wms(wmsUrl, { layers: '25', wmsoptions }),
-    '2012': L.tileLayer.wms(wmsUrl, { layers: '37', wmsoptions }),
-    '2025': L.tileLayer.wms(wmsUrl, { layers: '89', wmsoptions })
+  // 3. Shared WMS options
+  const wmsoptions = {
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.1',
+    maxNativeZoom: 18, // Native server limit
+    maxZoom: 22        // Allow Leaflet to stretch tiles up to level 22
   };
 
-  // 5. Display 2025 by default on load
-  let activeLayer = yearLayers['1970'].addTo(map);
+  const wmsUrl = 'https://ww3.yorkmaps.ca/arcgis/services/WMS/YorkRegion_OrthoImages_WMS/mapserver/wmsserver';
 
-  // 6. Connect to dropdown element: <select id="year-select">
+  // 4. Map each dropdown option using spread operator (...)
+  const yearLayers = {
+    '1970': L.tileLayer.wms(wmsUrl, { ...wmsoptions, layers: '1' }),
+    '1978': L.tileLayer.wms(wmsUrl, { ...wmsoptions, layers: '5' }),
+    '1988': L.tileLayer.wms(wmsUrl, { ...wmsoptions, layers: '9' }),
+    '1995': L.tileLayer.wms(wmsUrl, { ...wmsoptions, layers: '13' }),
+    '1999': L.tileLayer.wms(wmsUrl, { ...wmsoptions, layers: '17' }),
+    '2005': L.tileLayer.wms(wmsoptions, { ...wmsoptions, layers: '25' }),
+    '2012': L.tileLayer.wms(wmsUrl, { ...wmsoptions, layers: '37' }),
+    '2025': L.tileLayer.wms(wmsUrl, { ...wmsoptions, layers: '89' })
+  };
+
+  // 5. Display initial layer on load
+  let activeLayer = yearLayers['2025'].addTo(map);
+
+  // 6. Connect to dropdown element
   const dropdown = document.getElementById('left-year-select');
 
-  dropdown.addEventListener('change', (e) => {
-    const selectedYear = e.target.value;
+  if (dropdown) {
+    dropdown.addEventListener('change', (e) => {
+      const selectedYear = e.target.value;
 
-    if (activeLayer) {
-      map.removeLayer(activeLayer);
-    }
+      if (activeLayer) {
+        map.removeLayer(activeLayer);
+      }
 
-    if (yearLayers[selectedYear]) {
-      activeLayer = yearLayers[selectedYear].addTo(map);
-    }
-  });
+      if (yearLayers[selectedYear]) {
+        activeLayer = yearLayers[selectedYear].addTo(map);
+      }
+    });
+  }
 });
