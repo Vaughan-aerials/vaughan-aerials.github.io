@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const wmsoptions = {
   format: 'image/png',
   transparent: true,
-  version: '1.1.1'
+  version: '1.1.1',
   maxNativeZoom: 18,
   maxZoom: 22
 }
