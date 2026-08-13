@@ -1,3 +1,4 @@
+location.reload(true)
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Initialize map on Vaughan with maxZoom allowed on the map instance
   const map = L.map('map', { maxZoom: 22 }).setView([43.8372, -79.5083], 13);
