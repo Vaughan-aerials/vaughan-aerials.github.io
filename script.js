@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 4. Map each dropdown option using spread operator (...)
   const yearLayers = {
+    '1954': L.tileLayer("https://ww2.yorkmaps.ca/arcgis/rest/services/CacheMaps/YR_Imagery1954/MapServer/tile/{z}/{y}/{x}?blankTile=false", { maxZoom: 18}); 
     '1970': L.tileLayer.wms(wmsUrl, { ...wmsoptions, layers: '1' }),
     '1978': L.tileLayer.wms(wmsUrl, { ...wmsoptions, layers: '5' }),
     '1988': L.tileLayer.wms(wmsUrl, { ...wmsoptions, layers: '9' }),
@@ -29,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     '1999': L.tileLayer.wms(wmsUrl, { ...wmsoptions, layers: '17' }),
     '2005': L.tileLayer.wms(wmsUrl, { ...wmsoptions, layers: '25' }),
     '2012': L.tileLayer.wms(wmsUrl, { ...wmsoptions, layers: '37' }),
-    '2025': L.tileLayer.wms(wmsUrl, { ...wmsoptions, layers: '89' })
+    '2025': L.tileLayer.wms(wmsUrl, { ...wmsoptions, layers: '89' }
   };
 
   // 5. Display initial layer on load
