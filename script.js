@@ -23,9 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // 4. Map each dropdown option using spread operator (...)
   // Years
   const yearLayers = {
-    '1954': L.tileLayer("https://ww2.yorkmaps.ca/arcgis/rest/services/CacheMaps/YR_Imagery1954/MapServer/tile/{z}/{y}/{x}?blankTile=false", {
-      maxNativeZoom: 18,
+    '1954': L.esri.tiledMapLayer ({
+      url: 'https://ww2.yorkmaps.ca/arcgis/rest/services/CacheMaps/YR_Imagery1954/MapServer'
       maxZoom: 22,
+      maxNativeZoom:18,
     }),
     '1970': L.tileLayer.wms(wmsUrl, { ...wmsoptions, layers: '1' }),
     '1978': L.tileLayer.wms(wmsUrl, { ...wmsoptions, layers: '5' }),
