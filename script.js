@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Years
   const yearLayers = {
     '1954': L.esri.tiledMapLayer ({
-      url: 'https://ww2.yorkmaps.ca/arcgis/rest/services/CacheMaps/YR_Imagery1954/MapServer'
+      url: 'https://ww2.yorkmaps.ca/arcgis/rest/services/CacheMaps/YR_Imagery1954/MapServer',
       maxZoom: 22,
       maxNativeZoom:18,
     }),
