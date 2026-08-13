@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     '1954': L.tileLayer("https://ww2.yorkmaps.ca/arcgis/rest/services/CacheMaps/YR_Imagery1954/MapServer/tile/{z}/{y}/{x}?blankTile=false", {
       maxNativeZoom: 18,
       maxZoom: 22,
-    }); 
+    }),
     '1970': L.tileLayer.wms(wmsUrl, { ...wmsoptions, layers: '1' }),
     '1978': L.tileLayer.wms(wmsUrl, { ...wmsoptions, layers: '5' }),
     '1988': L.tileLayer.wms(wmsUrl, { ...wmsoptions, layers: '9' }),
