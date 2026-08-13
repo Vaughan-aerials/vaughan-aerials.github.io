@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // 5. Display initial layer on load
-  let activeLayer = yearLayers['1970'].addTo(map);
+  let activeLayer = yearLayers['2025'].addTo(map);
 
   // 6. Connect to dropdown element
   const dropdown = document.getElementById('left-year-select');
