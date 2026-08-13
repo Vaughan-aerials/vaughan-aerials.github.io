@@ -21,8 +21,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const wmsUrl = 'https://ww3.yorkmaps.ca/arcgis/services/WMS/YorkRegion_OrthoImages_WMS/mapserver/wmsserver';
 
   // 4. Map each dropdown option using spread operator (...)
+  // Years
   const yearLayers = {
-    '1954': L.tileLayer("https://ww2.yorkmaps.ca/arcgis/rest/services/CacheMaps/YR_Imagery1954/MapServer/tile/{z}/{y}/{x}?blankTile=false", { maxZoom: 18}); 
+    '1954': L.tileLayer("https://ww2.yorkmaps.ca/arcgis/rest/services/CacheMaps/YR_Imagery1954/MapServer/tile/{z}/{y}/{x}?blankTile=false", {
+      maxNativeZoom: 22,
+      maxZoom: 18,
+    }); 
     '1970': L.tileLayer.wms(wmsUrl, { ...wmsoptions, layers: '1' }),
     '1978': L.tileLayer.wms(wmsUrl, { ...wmsoptions, layers: '5' }),
     '1988': L.tileLayer.wms(wmsUrl, { ...wmsoptions, layers: '9' }),
