@@ -1,1 +1,249 @@
-<title>About</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vaughan Historical Aerials Viewer - Documentation</title>
+  <style>
+    :root {
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --primary: #1e3a8a;
+      --primary-light: #eff6ff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --code-bg: #f1f5f9;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 2.5rem 3rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      border: 1px solid var(--border-color);
+    }
+
+    header {
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 2.25rem;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+    }
+
+    .subtitle {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .badge-container {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--primary-light);
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      border: 1px solid #bfdbfe;
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      color: var(--primary);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: var(--accent-hover);
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      background-color: var(--code-bg);
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.9em;
+      color: #0f172a;
+    }
+
+    .callout {
+      background-color: #fffbeb;
+      border-left: 4px solid #f59e0b;
+      padding: 1rem;
+      border-radius: 0 6px 6px 0;
+      margin: 1.5rem 0;
+      color: #92400e;
+    }
+
+    .callout-title {
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 1rem 0.5rem;
+      }
+      .container {
+        padding: 1.5rem 1.25rem;
+      }
+      h1 {
+        font-size: 1.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Vaughan Historical Aerials Viewer</h1>
+      <p class="subtitle">Interactive, Leaflet-based viewer for historical aerial imagery of the City of Vaughan, Ontario.</p>
+      <div class="badge-container">
+        <span class="badge">Leaflet.js</span>
+        <span class="badge">York Region WMS</span>
+        <span class="badge">Open Source</span>
+        <span class="badge">Community Project</span>
+      </div>
+    </header>
+
+    <p>This site lets people explore aerial photographs dating back to 1954 using York Region WMS layers. It was built by a single developer to provide a lightweight, easy-to-use alternative to the official York Region map viewer.</p>
+
+    <section>
+      <h2>Key Features</h2>
+      <ul>
+        <li><strong>Historical Coverage:</strong> View aerial imagery of Vaughan (1954 &rarr; present) using York Region WMS layers.</li>
+        <li><strong>Year Selection:</strong> Year selector button (default year: 2025) with a dropdown menu to pick a year.</li>
+        <li><strong>Interactive Controls:</strong> Standard map navigation (pan, zoom) powered by Leaflet.</li>
+        <li><strong>Optimized Performance:</strong> Lightweight HTML, CSS, and JavaScript implementation for better mobile stability.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>How It Works</h2>
+      <ul>
+        <li>The site uses <strong>Leaflet</strong> to display a base map and overlay York Region WMS layers for aerial imagery.</li>
+        <li>A button shows the current year (default: <code>2025</code>). Click it to open a dropdown, choose a year, and the selected aerial layer will load.</li>
+        <li>Navigation and controls behave like typical web mapping applications (drag to pan, scroll or buttons to zoom).</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Usage</h2>
+      <ul>
+        <li>Go to <a href="https://vaughan-aerials.github.io" target="_blank" rel="noopener">vaughan-aerials.github.io</a> on any browser.</li>
+        <li>Open <code>index.html</code> in a browser or view the site via GitHub Pages (this repository is configured as a GitHub Pages site).</li>
+        <li>On mobile devices, the site aims to be more stable than the official York Region viewer, though performance depends on the device and network connection.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Data & Attribution</h2>
+      <p>The aerial imagery layers are provided via <strong>York Region WMS services</strong>. This project uses those WMS layers to display imagery but is not maintained by York Region.</p>
+    </section>
+
+    <div class="callout">
+      <div class="callout-title">Not Affiliated</div>
+      <p>This project is <strong>NOT</strong> affiliated with York Region or any government organization. It is a single-developer, community-focused viewer provided "as-is" to make Vaughan's historical aerials more accessible to the public.</p>
+    </div>
+
+    <section>
+      <h2>Tech Stack</h2>
+      <ul>
+        <li><strong>Frontend:</strong> HTML, CSS, JavaScript</li>
+        <li><strong>Mapping Engine:</strong> Leaflet.js</li>
+        <li><strong>Data Source:</strong> York Region WMS layers</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Troubleshooting & Notes</h2>
+      <ul>
+        <li><strong>Missing Imagery:</strong> If imagery does not load for a selected year, check your network connection — the site fetches data live from the York Region WMS servers.</li>
+        <li><strong>Mobile Performance:</strong> If a layer causes slowdowns or crashes on certain mobile devices, try a different browser or free up browser memory.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Contributing</h2>
+      <p>This is a small project maintained by one developer. If you'd like to contribute (fixes, improvements, accessibility tweaks), feel free to open an issue or a pull request on GitHub.</p>
+    </section>
+
+    <section>
+      <h2>Contact & Repository</h2>
+      <p>Repository: <a href="https://github.com/Vaughan-aerials/vaughan-aerials.github.io" target="_blank" rel="noopener">https://github.com/Vaughan-aerials/vaughan-aerials.github.io</a></p>
+    </section>
+
+    <footer>
+      <p>&copy; Vaughan Historical Aerials Viewer. Community project.</p>
+    </footer>
+  </div>
+
+</body>
+</html>
+
