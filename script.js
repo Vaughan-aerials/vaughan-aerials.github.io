@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     version: '1.1.1',
     maxNativeZoom: 18, // Native server limit
     maxZoom: 22,        // Allow Leaflet to stretch tiles up to level 22
-    zIndex: 100 // So basemap doesn't overlap with Imagery 
+    zIndex: 1000 // So basemap doesn't overlap with Imagery 
     
   };
 
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
       url: 'https://ww2.yorkmaps.ca/arcgis/rest/services/CacheMaps/YR_Imagery1954/MapServer',
       maxZoom: 22,
       maxNativeZoom:18,
-      zIndex: 100
+      zIndex: 1000
     }),
     '1970': L.tileLayer.wms(wmsUrl, { ...wmsoptions, layers: '1' }),
     '1978': L.tileLayer.wms(wmsUrl, { ...wmsoptions, layers: '5' }),
