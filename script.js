@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 3. Shared WMS options
   const wmsoptions = {
     format: 'image/png',
-    transparent: true,
+    transparent: false,
     version: '1.1.1',
     maxNativeZoom: 18, // Native server limit
     maxZoom: 22        // Allow Leaflet to stretch tiles up to level 22
