@@ -7,15 +7,18 @@ document.addEventListener('DOMContentLoaded', () => {
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 22,
     attribution: '© OpenStreetMap'
+    zIndex: 1
   }).addTo(map);
 
   // 3. Shared WMS options
   const wmsoptions = {
     format: 'image/png',
-    transparent: false,
+    transparent: true,
     version: '1.1.1',
     maxNativeZoom: 18, // Native server limit
-    maxZoom: 22        // Allow Leaflet to stretch tiles up to level 22
+    maxZoom: 22,        // Allow Leaflet to stretch tiles up to level 22
+    zIndex: 100 // So basemap doesn't overlap with Imagery 
+    
   };
 
   const wmsUrl = 'https://ww3.yorkmaps.ca/arcgis/services/WMS/YorkRegion_OrthoImages_WMS/mapserver/wmsserver';
