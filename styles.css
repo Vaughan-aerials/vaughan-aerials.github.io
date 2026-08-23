@@ -22,7 +22,7 @@ footer{
     top: 20px;
   right: 20px;
 }
-.yearselect .button {
+.yearselect , .button {
 	-webkit-appearance: none;
     -moz-appearance: none;
   position: absolute;
