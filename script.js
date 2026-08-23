@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 2. OpenStreetMap backup basemap
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 22,
+    maxZoom: 24,
     attribution: '© OpenStreetMap',
     zIndex: 1
   }).addTo(map);
