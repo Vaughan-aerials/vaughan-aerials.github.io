@@ -1,0 +1,15 @@
+{
+  "name": "Vaughan aerial photos",
+  "short_name": "VA Aerials",
+  "start_url": "https://vaughan-aerials.github.io/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
