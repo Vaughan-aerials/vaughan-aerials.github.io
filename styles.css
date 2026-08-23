@@ -26,10 +26,9 @@ button {
 	-webkit-appearance: none;
     -moz-appearance: none;
 	font-family: "outfit";
-	padding: 12px 20px !important;
+	padding: 5px 7px !important;
 	z-index:1000;
 	font-weight: 300;
-	
 	
 }
 .yearselect {
