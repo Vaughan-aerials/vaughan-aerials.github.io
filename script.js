@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
     format: 'image/png',
     transparent: true,
     version: '1.1.1',
-    maxNativeZoom: 18, // Native server limit
-    maxZoom: 22,        // Allow Leaflet to stretch tiles up to level 22
+    maxNativeZoom: 19, // Native server limit
+    maxZoom: 24,        // Allow Leaflet to stretch tiles up to level 22
     zIndex: 1000 // So basemap doesn't overlap with Imagery 
     
   };
