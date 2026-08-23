@@ -1,7 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Initialize map on Vaughan with maxZoom allowed on the map instance
-  const map = L.map('map', { maxZoom: 22 }).setView([43.8372, -79.5083], 13);
+  const map = L.map('map', { maxZoom: 24 }).setView([43.8372, -79.5083], 13);
 
   // 2. OpenStreetMap backup basemap
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     format: 'image/png',
     transparent: true,
     version: '1.1.1',
-    maxNativeZoom: 19, // Native server limit
+    maxNativeZoom: 18, // Native server limit
     maxZoom: 24,        // Allow Leaflet to stretch tiles up to level 22
     zIndex: 1000 // So basemap doesn't overlap with Imagery 
     
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const yearLayers = {
     '1954': L.esri.tiledMapLayer({
       url: 'https://ww2.yorkmaps.ca/arcgis/rest/services/CacheMaps/YR_Imagery1954/MapServer',
-      maxZoom: 22,
+      maxZoom: 24,
       maxNativeZoom:18,
       zIndex: 1000
     }),
