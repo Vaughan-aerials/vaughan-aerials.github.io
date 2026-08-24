@@ -47,10 +47,11 @@ This project is NOT affiliated with York Region or any government organization. 
 - This is a small project maintained by one developer. If you'd like to contribute (fixes, improvements, accessibility tweaks), open an issue or a pull request.
 
 ## License
-
+Copyright © 2026 Vaughan Aerials. All rights reserved
 ## Contact
 
 - Repo: https://github.com/Vaughan-aerials/vaughan-aerials.github.io
 
 ---
+Copyright © 2026 Vaughan Aerials. All rights reserved
  
