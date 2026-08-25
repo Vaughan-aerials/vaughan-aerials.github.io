@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   if ('connection' in navigator) {
     if (navigator.connection.type === 'cellular') {
-    alert('This Site is not available on Mobile data, connect to wifi and refresh the page');
+    alert("This service is unavailable on cellular data. Please connect to a Wi-Fi network and reload the page.");
     } else {
       // show Warning and does not show tiles
       loadmap()
