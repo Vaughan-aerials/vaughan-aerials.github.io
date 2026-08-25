@@ -1,17 +1,18 @@
 // Copyright 2026 lomos technologies
-if ('connection' in navigator) {
-  if (navigator.connection.type === 'cellular') {
+document.addEventListener('DOMContentLoaded', () => {
+  if ('connection' in navigator) {
+    if (navigator.connection.type === 'cellular') {
     
-  } else {
-    // show Warning and does not show tiles
-    loadmap()
-  }
+    } else {
+      // show Warning and does not show tiles
+      loadmap()
+    }
 
-} else {
-loadmap()
-}
+  } else {
+  loadmap()
+  }
+});
 function loadmap() {
-  document.addEventListener('DOMContentLoaded', () => {
     // 1. Initialize map on Vaughan with maxZoom allowed on the map instance
     const map = L.map('map', { maxZoom: 24 }).setView([43.8372, -79.5083], 13);
 
@@ -72,5 +73,5 @@ function loadmap() {
         }
       });
     }
-  });
+  
 }
