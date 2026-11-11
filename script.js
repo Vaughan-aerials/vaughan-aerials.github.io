@@ -38,12 +38,19 @@ function loadmap() {
     // 4. Map each dropdown option using spread operator (...)
     // Years
     const yearLayers = {
-      '1954': L.esri.tiledMapLayer({
+	  '1860': L.esri.tiledMapLayer({
+		url: 'https://ww2.yorkmaps.ca/arcgis/rest/services/CacheMaps/YorkCounty_BaseMap_1860/MapServer',
+		maxZoom: 24,
+		maxNativeZoom:18,
+		zIndex: 1000
+	  }),
+    '1954': L.esri.tiledMapLayer({
         url: 'https://ww2.yorkmaps.ca/arcgis/rest/services/CacheMaps/YR_Imagery1954/MapServer',
         maxZoom: 24,
         maxNativeZoom:18,
         zIndex: 1000
-      }),
+    }),
+
       '1970': L.tileLayer.wms(wmsUrl, { ...wmsoptions, layers: '1' }),
       '1978': L.tileLayer.wms(wmsUrl, { ...wmsoptions, layers: '5' }),
       '1988': L.tileLayer.wms(wmsUrl, { ...wmsoptions, layers: '9' }),
