@@ -28,7 +28,7 @@ function loadmap() {
       format: 'image/png',
       transparent: true,
       version: '1.1.1',
-      maxNativeZoom: 16, // Native server limit
+      maxNativeZoom: 18, // Native server limit
       maxZoom: 24,        // Allow Leaflet to stretch tiles up to level 22
       zIndex: 1000 // So basemap doesn't overlap with Imagery 
     };
@@ -41,7 +41,7 @@ function loadmap() {
 	  '1860': L.esri.tiledMapLayer({
 		url: 'https://ww2.yorkmaps.ca/arcgis/rest/services/CacheMaps/YorkCounty_BaseMap_1860/MapServer',
 		maxZoom: 24,
-		maxNativeZoom:18,
+		maxNativeZoom:16,
 		zIndex: 1000
 	  }),
     '1954': L.esri.tiledMapLayer({
